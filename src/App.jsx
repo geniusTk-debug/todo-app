@@ -1,15 +1,22 @@
 import './reset.css';
 import './App.css';
 import Form from './Component/Form/index';
+import Whiteboard from './Component/Whiteboard/index';
+import { useState } from 'react';
+
 
 function App() {
+  const [input, showInput] = useState(false)
  
 
   return (
-    <div className='todo-app-container'>
+     <>
+     <Whiteboard input={input} showInput={showInput}/>
+     <Form/>
+     </>
+
+     
       
-      <Form/>
-    </div>
   )
 }
 

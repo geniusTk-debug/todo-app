@@ -1,0 +1,87 @@
+.whiteboard-container{
+    max-width: 35rem;
+    background: #3C3C3C;
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+    
+    min-height: 60vh;
+    border: 2px dotted #1F2020;
+    box-shadow: 0px 0px 2px 2px #1F2020;
+    border-radius: 5px;
+}
+#input-form{
+   
+    background: #374151;
+    border: 2px solid lightseagreen;
+     box-shadow: 0px 0px 2px 2px #1F2020;
+    
+    border-radius: 5px;
+    margin: 0px 30px;
+    text-align: start;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 0.5s;
+}
+.whiteboard-container.app-title {
+    color: wheat;
+    max-width: 10rem;
+    min-height: 2rem;
+    padding: 5px;
+    margin: auto;
+    box-shadow: 1px 1px 1px 1px #1F2020;
+    border-radius: 3px;
+    border: 1px solid #1F2020;
+   
+    
+    background-color: transparent;
+}
+
+.whiteboard-container .notification {
+    
+    color: wheat;
+    text-align: start;
+    padding: 15px;
+    border-top: 2px dotted #1F2020;
+    box-shadow: 0px 2px #1F2020 inset;
+    min-height: 2rem;
+   
+    margin-top: 1rem;
+}
+.whiteboard-container .todo-list {
+     box-shadow: 0px 0px 2px 2px #1F2020 inset;
+     position: relative;
+    
+    
+    
+}
+.whiteboard-container .todo-list ul{
+    background: #374151;
+    border: 2px solid lightseagreen;
+     box-shadow: 0px 0px 2px 2px #1F2020;
+    border-radius: 5px;
+    margin: 0px 30px;
+    text-align: start;
+
+}
+.whiteboard-container .todo-list ul li{
+    display: block;
+    
+    
+    min-height: 2rem;
+    padding: 15px;
+}
+
+.whiteboard-container .todo-list ul li .absolute-no{
+    color: lightseagreen;
+    font-weight: bolder;
+    
+    position: absolute;
+    left: 10px;
+    box-shadow: 0.5px 2px 1px 0.5px #1F2020;
+    border-radius: 3px;
+}

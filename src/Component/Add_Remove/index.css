@@ -1,0 +1,25 @@
+.add-remove-component {
+    
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.add-remove-component .add-btn {
+    max-width: 200px;
+    box-sizing: border-box;
+    display: flex;
+    margin:auto;
+    border-radius: 5px;
+    background: transparent;
+    padding: 2px;
+}
+.add-remove-component .add-btn .i-add {
+    padding: 2px;
+    font-size: 25px;
+}
+.i-add:hover{
+    color: lightseagreen;
+   
+}
