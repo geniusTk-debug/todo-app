@@ -1,0 +1,15 @@
+.extra-container {
+    
+    
+    height: 2rem;
+}
+
+.extra-container .extra {
+    background: #3C3C3C;
+    box-shadow: 1px 2px 2px 2px #1F2020;
+    border: 2px dashed lightskyblue;
+    border-radius: 3px;
+    width: 60%;
+    height: 2rem;
+    margin: 2rem auto;
+}

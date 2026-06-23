@@ -5,19 +5,21 @@ export default function Add_Remove({input, showInput,}) {
 
     const addHandler = () => {
        
-        if(input) {
+        if(input){
             showInput(false)
-        } else {
-
-            showInput(true)
         }
-        
-        
+        else{
+            showInput(true)
+         }
     }
    
   return (
     <div className='add-remove-component'>
-        <button className='add-btn' onClick={addHandler}>
+
+        <button
+         className='add-btn'
+          onClick={addHandler}>
+
            <i className="fa-solid fa-plus i-add" style={
                 {
                     display: input ? 'none' : 'block'

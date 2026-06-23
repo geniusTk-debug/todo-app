@@ -1,0 +1,20 @@
+.time-container {
+
+    width: 50%;
+    text-align: center;
+    margin:.8rem auto;
+   
+    
+   
+    color: lightseagreen;
+    font-weight: bolder;
+    
+}
+
+.time-container .date .style {
+    border: 1px dashed #3C3C3C;
+    box-shadow: 1px 2px 2px 2px #1F2020 inset;
+    padding: .1rem;
+    
+    
+}
