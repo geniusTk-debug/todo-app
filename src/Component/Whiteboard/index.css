@@ -27,6 +27,9 @@
     transition: all 0.4s ease-in-out;
     transition-delay: 0.5s;
 }
+#input-form:hover {
+    opacity: 0.5;
+}
 .whiteboard-container.app-title {
     color: wheat;
     max-width: 10rem;
@@ -44,7 +47,7 @@
 .whiteboard-container .notification {
     
     color: wheat;
-    text-align: start;
+    text-align: center;
     padding: 15px;
     border-top: 2px dotted #1F2020;
     box-shadow: 0px 2px #1F2020 inset;
@@ -66,6 +69,8 @@
     border-radius: 5px;
     margin: 0px 30px;
     text-align: start;
+   
+    min-height: 250px;
 
 }
 .whiteboard-container .todo-list ul li{
@@ -84,4 +89,16 @@
     left: 10px;
     box-shadow: 0.5px 2px 1px 0.5px #1F2020;
     border-radius: 3px;
+}
+
+.whiteboard-container .todo-list ul .info-show-text{
+
+   
+   color: lightseagreen;
+   font-weight: bold;
+   font-style: oblique;
+   display: flex;
+   justify-content: center;
+   margin: 100px;
+   
 }

@@ -1,9 +1,10 @@
 
 import './index.css';
-export default function Add_Remove({input, showInput}) {
+export default function Add_Remove({input, showInput,}) {
     
 
     const addHandler = () => {
+       
         if(input) {
             showInput(false)
         } else {
@@ -11,11 +12,12 @@ export default function Add_Remove({input, showInput}) {
             showInput(true)
         }
         
+        
     }
-    console.log(input)
+   
   return (
     <div className='add-remove-component'>
-        <button className='add-btn' onClick={() => addHandler()}>
+        <button className='add-btn' onClick={addHandler}>
            <i className="fa-solid fa-plus i-add" style={
                 {
                     display: input ? 'none' : 'block'
