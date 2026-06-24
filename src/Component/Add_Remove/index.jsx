@@ -1,8 +1,8 @@
 
-import './index.css';
-export default function Add_Remove({input, showInput,}) {
-    
 
+import './index.css';
+export default function Add_Remove({input, showInput}) {
+  
     const addHandler = () => {
        
         if(input){
@@ -12,7 +12,7 @@ export default function Add_Remove({input, showInput,}) {
             showInput(true)
          }
     }
-   
+  
   return (
     <div className='add-remove-component'>
 
@@ -31,6 +31,8 @@ export default function Add_Remove({input, showInput,}) {
                 }
             }></i>
         </button>
+
+       
     </div>
   )
 }

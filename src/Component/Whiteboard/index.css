@@ -5,26 +5,29 @@
     text-align: center;
     margin: auto;
     margin-top: 1rem;
-    min-height: 60vh;
     border: 2px dotted #1F2020;
     box-shadow: 0px 0px 2px 2px #1F2020;
     border-radius: 5px;
+    position: relative;
 
 }
 
 #input-form{
-   
-    background: #374151;
+    
+    font-weight: 1000;
+    font-size: larger;
+    font-style: italic;
+    color: white;
     border: 2px solid lightseagreen;
     box-shadow: 0px 0px 2px 2px #1F2020;
     border-radius: 5px;
-    margin: 0px 30px;
     text-align: start;
     position: absolute;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    top:0;
-    bottom: 0;
+    margin: 0 30px;
     transition: all 0.4s ease-in-out;
     transition-delay: 0.5s;
 }
@@ -74,6 +77,9 @@
 
     box-shadow: 0px 0px 2px 2px #1F2020 inset;
     position: relative;
+     max-height: 250px;
+     overflow-y: scroll;
+     
 
 }
 .whiteboard-container .todo-list ul{
@@ -84,20 +90,31 @@
     border-radius: 5px;
     margin: 0px 30px;
     text-align: start;
-    min-height: 200px;
+   overflow: hidden;
+   min-height: 250px;
 
 }
-.whiteboard-container .todo-list ul li{
-
-    display: block;
-    min-height: 2rem;
-    padding: 15px;
+.whiteboard-container .todo-list ul .todo-items-row{
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px 10px 10px;
     color: lightseagreen;
     font-weight: bolder;
     font-style: italic;
+    box-sizing: border-box;
     
+   
 }
 
+.whiteboard-container .todo-list ul .todo-items-row .todo-item-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
 .whiteboard-container .todo-list ul li .absolute-no{
 
     color: lightseagreen;
@@ -118,4 +135,23 @@
    justify-content: center;
    margin: 100px;
    
+}
+
+.whiteboard-container .todo-list ul .todo-items-row .absolute-remove {
+
+    position: absolute;
+    background: #3C3C3C;
+    font-size: 15px;
+    right: 5px;
+    
+    color: brown;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 1px black;
+    height: .6rem;
+    padding-bottom: .8rem;
+
+}
+.whiteboard-container .todo-list ul .todo-items-row .absolute-remove:hover {
+    
+    color: red;
 }
