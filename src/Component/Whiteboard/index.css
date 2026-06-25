@@ -99,13 +99,15 @@
     
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items:center;
     width: 100%;
-    padding: 10px 40px 10px 10px;
+    padding: 10px;
     color: lightseagreen;
     font-weight: bolder;
     font-style: italic;
     box-sizing: border-box;
+    text-align: justify;
     
    
 }

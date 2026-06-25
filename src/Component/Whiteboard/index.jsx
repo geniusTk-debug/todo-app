@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import './index.css';
-import Add_Remove from '../Add_Remove';
 import Time from '../Time';
 
-export default function Whiteboard({input, showInput,plan, add_plan}) {
+import Add_Remove from '../Add_Remove';
+
+export default function Whiteboard({input, showInput,plan, add_plan, addPlan, delete_todo}) {
 
   const [clicked_btn_id, set_clicked_btn_id] = useState(null);
 
     const remove_btn_handler = (id) => {
+      delete_todo(id);
+      addPlan(prevState => prevState.filter(todo => (
+        todo.id !== id
+      )))
       console.log(id)
       
       set_clicked_btn_id(id)
@@ -38,33 +43,36 @@ export default function Whiteboard({input, showInput,plan, add_plan}) {
             
           </form>
           <ul>
-            {!plan.length &&
+            {plan.length === 0 &&
              <div className='info-show-text'>
               <h2>You Don't Have Any Plan Today. Wanna Add Some..? Click '+' Button</h2>
              </div>}
              
-           {plan.map(prevState => (
-            
+          {plan.map((prevState, i) => (
             <li className='todo-items-row' key={prevState.id}>
               <div className='todo-item-left'>
-                <span className='absolute-no'>{prevState.id}</span>
+                <span className='absolute-no'>{i + 1}</span>
                 <span className='todo-text'>{ prevState.todo}</span>
               </div>
 
-              <i style={{
-                 boxShadow: clicked_btn_id === prevState.id ? '1px 1px 2px 1px black inset' : '1px 1px 2px 1px black'
-              }}
-                className="fa-solid fa-minus absolute-remove"
-                onClick={() => remove_btn_handler(prevState.id)}>
-              </i>
+              <div className='todo-item-right'>
+                <span style={{color: 'green'}}>Added : {prevState.time}</span>
+
+                <i style={{
+                  boxShadow: clicked_btn_id === prevState.id ? '1px 1px 2px 1px black inset' : '1px 1px 2px 1px black'
+                }}
+                  className="fa-solid fa-minus absolute-remove"
+                  onClick={() => remove_btn_handler(prevState.id)}>
+                </i>
+              </div>
             </li>
-            ))}
+          ))}
         
         </ul>
         </div>
         <Time/>
-      
-     <Add_Remove input={input} showInput={showInput} />
+     <Add_Remove input={input} showInput={showInput} plan={plan} />
+        
       
     
 
