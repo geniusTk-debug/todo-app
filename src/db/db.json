@@ -1,28 +1,16 @@
 {
-  "plan": [
-    {
-      "todo": "Get up early tomorrow morning",
-      "time": "1:59:45 AM",
-      "completed": false,
-      "id": "--Yk5D9gOFU"
-    },
-    {
-      "todo": "Cooking",
-      "time": "2:00:03 AM",
-      "completed": false,
-      "id": "EoO0QQhAiiY"
-    },
-    {
-      "todo": "Learning Programming",
-      "time": "2:00:14 AM",
-      "completed": false,
-      "id": "RktBfcVVlLs"
-    },
+  "plans": [
     {
       "todo": "Set goal to make money in next three months, so I will make it happened",
       "time": "2:15:08 AM",
       "completed": false,
       "id": "rF96ZfjLt58"
+    },
+    {
+      "todo": "To change code that are recommended from Codey",
+      "time": "2:27:43 PM",
+      "completed": false,
+      "id": "nV_Coqpu2jE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

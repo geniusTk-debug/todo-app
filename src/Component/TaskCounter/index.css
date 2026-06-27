@@ -1,0 +1,24 @@
+.task-rc-container {
+   
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #3f3f3f;
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+   
+    
+}
+
+.task-rc-container .task-rc-left {
+   max-width: 150px;
+    background: rgb(30 30 30 / 20%);
+    margin: auto;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+    border: 2px dashed black;
+    border-radius: 10px;
+    display: flex;
+    
+}

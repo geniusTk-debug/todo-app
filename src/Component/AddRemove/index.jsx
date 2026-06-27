@@ -1,7 +1,7 @@
 
-import Task_RC from '../Task_RC';
+import TaskCounter from '../TaskCounter';
 import './index.css';
-export default function Add_Remove({input, showInput, plan}) {
+export default function AddRemove({input, showInput, plans}) {
   
     const addHandler = () => {
        
@@ -31,7 +31,7 @@ export default function Add_Remove({input, showInput, plan}) {
                 }
             }></i>
         </button>
-       <Task_RC plan={plan}/>
+       <TaskCounter plans={plans}/>
 
     </div>
   )

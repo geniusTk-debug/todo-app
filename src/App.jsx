@@ -1,26 +1,25 @@
 import './reset.css';
 import './App.css';
+import usePlans from './Hook/usePlans';
 import { useState } from 'react';
-import Api from './Api';
 import Whiteboard from './Component/Whiteboard/index';
 import Extra from './Component/Extra';
-import Task_RC from './Component/Task_RC';
+
+
 
 
 function App() {
 
- let url = 'http://localhost:3000/plan';
- const [plan, addPlan] = useState([]);
+ let url = 'http://localhost:3000/plans';
+ 
  const [input, showInput] = useState(false)
+ 
+ const { data : plans, setData : addPlans , deleteTodo } = usePlans(url)
 
- const delete_todo = (id) => {
-  fetch(`http://localhost:3000/plan/${id}`, {
-    method: 'DELETE'
-  })
- }
+ 
 
 
-  const add_plan = async (e) => {
+  const addPlan = async (e) => {
     e.preventDefault();
    
     const todoText = e.target.elements['input-form'].value;
@@ -43,7 +42,7 @@ function App() {
 
       if(response.ok) {
         const saved_plan = await response.json();
-        addPlan((prevState) => [...prevState, saved_plan]);
+        addPlans((prevState) => [...prevState, saved_plan]);
         e.target.reset();
       }else {
         console.error("failed to saved plan");
@@ -55,13 +54,14 @@ function App() {
 
    
   }
-console.log("start",plan)
+console.log("start",plans)
   return (
     <>
-    <Api addPlan={addPlan}/>
-    <Task_RC plan={plan}/>
-    <Whiteboard input={input} showInput={showInput} plan={plan} add_plan={add_plan} addPlan={addPlan} delete_todo={delete_todo}/>
+    
+    
+    <Whiteboard input={input} showInput={showInput} addPlan={addPlan} deleteTodo={deleteTodo} plans={plans} addPlans={addPlans}/>
     <Extra/>
+    
     </>
   )
 }

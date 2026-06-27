@@ -116,6 +116,7 @@
     display: flex;
     gap: 15px;
     align-items: center;
+    cursor: pointer;
 }
 .whiteboard-container .todo-list ul li .absolute-no{
 
