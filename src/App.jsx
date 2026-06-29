@@ -7,16 +7,14 @@ import Extra from './Component/Extra';
 
 
 
-
 function App() {
 
  let url = 'http://localhost:3000/plans';
  
  const [input, showInput] = useState(false)
  
- const { data : plans, setData : addPlans , deleteTodo } = usePlans(url)
+ const { data : plans, setData : addPlans , deleteTodo, showPlanDetail, hidePlanDetail, selectedPlanId } = usePlans(url)
 
- 
 
 
   const addPlan = async (e) => {
@@ -28,8 +26,10 @@ function App() {
 
     const new_plan = {
       todo: todoText,
+      date: new Date().toLocaleDateString(),
       time: new Date().toLocaleTimeString(),
-      completed: false
+      deadline: "notset",
+      complete: false
     };
     try{
       const response = await fetch(url, {
@@ -51,16 +51,15 @@ function App() {
     } catch(error) {
       console.error("inside catch", error)
     }
-
-   
-  }
+  };
 console.log("start",plans)
   return (
     <>
     
     
-    <Whiteboard input={input} showInput={showInput} addPlan={addPlan} deleteTodo={deleteTodo} plans={plans} addPlans={addPlans}/>
+    <Whiteboard selectedPlanId={selectedPlanId} showPlanDetail={showPlanDetail} hidePlanDetail={hidePlanDetail} input={input} showInput={showInput} addPlan={addPlan} deleteTodo={deleteTodo} plans={plans} addPlans={addPlans}/>
     <Extra/>
+
     
     </>
   )

@@ -3,6 +3,7 @@
     margin: 1rem 0 1rem 0;
     position: relative;
     
+    
 
 }
 
@@ -15,6 +16,7 @@
     border-radius: 5px;
     background: transparent;
     padding: 2px;
+    cursor: pointer;
 }
 .add-remove-component .add-btn .i-add {
     padding: 2px;

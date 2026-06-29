@@ -1,0 +1,47 @@
+.detail-container {
+    min-width: 400px;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 10px 0;
+    padding: 5px;
+    
+}
+.detail-container .detail-list {
+    
+    display: contents;
+}
+.detail-container .detail-list .detail{
+    display: flex;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+
+.detail-container .detail-btn-container .detail-btn {
+    color: greenyellow;
+    font-size: 15px;
+    border: 1px double #374151;
+    border-radius: 10px;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    min-width: 40px;
+    
+    transition: all .4s ease-in-out;
+}
+
+
+.detail-container .detail-btn-container .detail-btn:hover {
+    min-width: 60px;
+    box-shadow: 2px 2px 5px;
+}
+.detail-container .detail-btn-container {
+    width: 50%;
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}

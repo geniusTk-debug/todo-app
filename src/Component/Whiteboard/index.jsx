@@ -1,95 +1,59 @@
-import { useState } from 'react';
+
 import './index.css';
 import Time from '../Time';
 import AddRemove from '../AddRemove';
-
-
-export default function Whiteboard({ input, showInput, addPlan, deleteTodo, plans, addPlans}) {
-
-  const [clicked_btn_id, set_clicked_btn_id] = useState(null);
-  
-
-
-   const choose_plan = (prevState) => {
-    console.log(prevState)
-        addPlans(prev_State => prev_State.filter(
-            chosenPlan => (
-                chosenPlan.id === prevState
-            )
-            
-        ))
-    }
-
+import Detail from "../Detail";
+export default function Whiteboard({ selectedPlanId, showPlanDetail, hidePlanDetail, input, showInput, addPlan, deleteTodo, plans, addPlans}) {
+ console.log(selectedPlanId)
     const remove_btn_handler = async (id) => {
       await deleteTodo(id);
       addPlans(prevState => prevState.filter(todo => (
         todo.id !== id
       )))
-      
-      
-      set_clicked_btn_id(id)
-        setTimeout(() => {
-            set_clicked_btn_id(null)
-        }, 250)
-
     };
 
   return (
     <div className='whiteboard-container'>
 
       <div className='app-title'><h1>To Do App</h1><h1 className='contact'>dev by : geniusTK</h1></div>
-      
-
-      
+          
         <div className='notification'><p>Today Quotes: 'NO PAIN, NO GAIN'</p></div>
         <div className='todo-list'>
           <form onSubmit={addPlan}>
             {input && <input
-           style={{background: 'lightSeaGreen', opacity: plans.length ? '0.6' : '1'}}
+          style={{background: 'lightSeaGreen', opacity: plans.length ? '0.6' : '1'}}
             type='text'
-             id='input-form'
-             name='input-form'
-             autoComplete='off'
+            id='input-form'
+            name='input-form'
+            autoComplete='off'
               placeholder= {!plans.length ? 'Add your today plan here and hit ENTER' : '' }
-               />}
+              />}
             
           </form>
           <ul>
             {plans && !plans.length &&
-             <div className='info-show-text'>
+            <div className='info-show-text'>
               <h2>You Don't Have Any Plan Today. Wanna Add Some..? Click '+' Button</h2>
-             </div>}
-             
+            </div>}
           {plans && plans.map((prevState, i) => (
             <li className='todo-items-row' key={prevState.id}>
               <div className='todo-item-left'>
                 <span className='absolute-no'>{i + 1}</span>
-                <span className='todo-text' onClick={()=>choose_plan(prevState.id)}>{ prevState.todo}</span>
+                <span className='todo-text' onClick={()=>showPlanDetail(prevState.id)}>{ prevState.todo}</span>
               </div>
-
-              <div className='todo-item-right'>
-                <span style={{color: 'green'}}>Added : {prevState.time}</span>
-
-                <i style={{
-                  boxShadow: clicked_btn_id === prevState.id ? '1px 1px 2px 1px black inset' : '1px 1px 2px 1px black'
-                }}
-                  className="fa-solid fa-minus absolute-remove"
-                  onClick={() => remove_btn_handler(prevState.id)}>
-                </i>
+              <div className='remove-btn-container' onClick={() => remove_btn_handler(prevState.id)} >
+                <button className='absolute-remove-btn'></button>            
               </div>
-            </li>
+              {selectedPlanId === prevState.id &&
+              <Detail prevState={prevState} hidePlanDetail={hidePlanDetail}/>}
+            </li>           
           ))}
         
         </ul>
         </div>
         <Time/>
-     <AddRemove input={input} showInput={showInput} plans={plans} />
-        
-      
+    <AddRemove input={input} showInput={showInput} plans={plans} />
     
-
-      
-
     </div>
   )
 }

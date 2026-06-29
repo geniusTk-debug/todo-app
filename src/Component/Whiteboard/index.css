@@ -13,7 +13,8 @@
 }
 
 #input-form{
-    
+
+    max-width: 500px;
     font-weight: 1000;
     font-size: larger;
     font-style: italic;
@@ -30,6 +31,8 @@
     margin: 0 30px;
     transition: all 0.4s ease-in-out;
     transition-delay: 0.5s;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .whiteboard-container .app-title {
@@ -49,8 +52,8 @@
 
 }
 .whiteboard-container .app-title .contact {
+
     font-size: .5rem;
-   
     margin: .2rem auto;
     color: lightcoral;
     padding-bottom: 1px;
@@ -70,16 +73,14 @@
     border-top: 2px dotted #1F2020;
     box-shadow: 0px 2px #1F2020 inset;
     min-height: 2rem;
-   
 
 }
 .whiteboard-container .todo-list {
 
     box-shadow: 0px 0px 2px 2px #1F2020 inset;
     position: relative;
-     max-height: 250px;
-     overflow-y: scroll;
-     
+    max-height: 300px;
+    overflow-y: scroll;
 
 }
 .whiteboard-container .todo-list ul{
@@ -90,34 +91,45 @@
     border-radius: 5px;
     margin: 0px 30px;
     text-align: start;
-   overflow: hidden;
-   min-height: 250px;
+    overflow: hidden;
+    min-height: 300px;
 
 }
 .whiteboard-container .todo-list ul .todo-items-row{
     
-    
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items:center;
-    width: 100%;
+    display: block;
+    max-width: 500px;
     padding: 10px;
+    margin: 10px 0;
     color: lightseagreen;
     font-weight: bolder;
     font-style: italic;
-    box-sizing: border-box;
-    text-align: justify;
+    text-align: start;    
     
-   
 }
 
-.whiteboard-container .todo-list ul .todo-items-row .todo-item-left {
+.whiteboard-container .todo-list ul .todo-items-row:hover
+{
+    .absolute-no{
+        font-size: 25px;
+        box-shadow: none;
+        
+    }
+    box-shadow: 1px 1px 3px 2px;
+    border-radius: 5px;
+}
+
+.whiteboard-container 
+.todo-list ul 
+.todo-items-row 
+.todo-item-left {
+    height: 100%;
     display: flex;
     gap: 15px;
     align-items: center;
     cursor: pointer;
 }
+
 .whiteboard-container .todo-list ul li .absolute-no{
 
     color: lightseagreen;
@@ -126,35 +138,58 @@
     left: 10px;
     box-shadow: 0.5px 2px 1px 0.5px #1F2020;
     border-radius: 3px;
-
 }
 
 .whiteboard-container .todo-list ul .info-show-text{
 
-   color: lightseagreen;
-   font-weight: bold;
-   font-style: oblique;
-   display: flex;
-   justify-content: center;
-   margin: 100px;
-   
+    color: lightseagreen;
+    font-style: oblique;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 100px;
 }
 
-.whiteboard-container .todo-list ul .todo-items-row .absolute-remove {
-
+.whiteboard-container 
+.todo-list ul .todo-items-row 
+.remove-btn-container {
+    
     position: absolute;
-    background: #3C3C3C;
-    font-size: 15px;
     right: 5px;
-    
-    color: brown;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px 1px black;
-    height: .6rem;
-    padding-bottom: .8rem;
+    max-width: 1.5rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 5px 2px;
+    margin-top: -18px;
+    border: 2px solid #3c3c3c;
+    border-radius: 15px;
+    box-shadow: 1px 2px 5px 1px black;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+.whiteboard-container 
+.todo-list ul 
+.todo-items-row 
+.remove-btn-container 
+.absolute-remove-btn {
+
+    display: block;
+    background: red;
+    border: 1px transparent;
+    min-width: .5rem;
+    transition: all .4s ease-out;
+    cursor: pointer;
 
 }
-.whiteboard-container .todo-list ul .todo-items-row .absolute-remove:hover {
-    
-    color: red;
+.whiteboard-container 
+.todo-list ul 
+.todo-items-row 
+.remove-btn-container:hover{
+    .absolute-remove-btn {
+        min-width: 1rem;
+    }
+    box-shadow: 1px 2px 5px lightseagreen;
+    border: 2px solid lightseagreen;
+    max-width: 2rem;
 }
